@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package>
+    <name>Daffodil_Isfeatured</name>
+    <version>1.0.0.1</version>
+    <stability>stable</stability>
+    <license>GPL</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Manage Featured Products with scroller.</summary>
+    <description>&lt;h1&gt;Featured Products&lt;h1&gt;&#xD;
+This extension provides ability to show featured products with scroller.&#xD;
+&lt;ul&gt;&#xD;
+&lt;li&gt;&lt;strong&gt;Featured Products Frontent&lt;/strong&gt; where you can see the list of all featured products scroller.&lt;/li&gt;&#xD;
+&lt;li&gt;&lt;strong&gt;Featured Products Block&lt;/strong&gt; This extension give user ability to put featured product scroller block in cms pages  Example: put it in Home page content &lt;strong&gt;{{block type="core/template" template="isfeatured/featureblock.phtml"}} &lt;/strong&gt;&lt;/li&gt;&#xD;
+&lt;li&gt;Backend:Easy managment for feature product setting (Eg.Module enable disable,Title managment,Number of product in scroller managment.)&lt;/li&gt;&#xD;
+&lt;/ul&gt; </description>
+    <notes>First release.</notes>
+    <authors><author><name>Daffodil Software</name><user>daffodilsw</user><email>ashish.mittal@daffodilsw.com</email></author></authors>
+    <date>2012-12-31</date>
+    <time>09:13:36</time>
+    <contents><target name="magelocal"><dir name="Daffodil"><dir name="Isfeatured"><dir name="Block"><file name="Isfeatured.php" hash="6a6291946dc393077bcc653da85cb7fc"/><file name="Isfeatured.php~" hash="0299aaf2ad93270ccad9630d74595ff5"/></dir><dir name="Helper"><file name="Data.php" hash="befc784cc8edcef2ed31c67792d5d352"/></dir><dir name="controllers"><file name="IndexController.php" hash="21b248bef42005da722533f56f9229da"/><file name="IndexController.php~" hash="a4050b59f980792884a310a67b93d8d8"/><file name="IsfeaturedController.php~" hash="853add497a1a7e27bc66341650acc82f"/></dir><dir name="etc"><file name="config.xml" hash="459fb2f43027bcb9e891ff9040ef0c36"/><file name="config.xml~" hash="e3d8017907bb220164441016ddad4ac6"/><file name="system.xml" hash="409266d52c8fd3d5aefc3bdcd6468d45"/><file name="system.xml~" hash="215e98c3f725ecee8339a66468b245c0"/></dir><dir name="sql"><dir name="categoryattribute1350295220_setup"><file name="mysql4-install-0.1.0.php" hash="d27cfd777cddf0a345a5fb479aa92b58"/><file name="mysql4-install-0.1.0.php~" hash="d27cfd777cddf0a345a5fb479aa92b58"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Daffodil_Isfeatured.xml" hash="4e219ed1cd4a6eb9ef98a40631e09bd0"/></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="isfeatured.xml" hash="0d7b42319c043e553ab8f1375a76dd2b"/></dir><dir name="template"><dir name="isfeatured"><file name="featureblock.phtml" hash="331e714e7ff795b818870ea24fbfe55c"/><file name="featureblock.phtml~" hash="f1dd31aec8fc09c44f430d95f848a973"/><file name="isfeatured..phtml~" hash="8745d484c4bde08511451c96dee6eda1"/><file name="isfeatured.phtml~" hash="05672361173714095b05d805c4a4f7d6"/></dir></dir></dir></dir></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><file name="isfeatured.css" hash="5787a7e8f3e52d48c2be6dc726553438"/></dir><dir name="images"><dir name="featured"><file name="left.png" hash="b7070114145a353262ecfc8d4e87f198"/><file name="right.png" hash="3bdd34ce4d6c4454e86678fcd39ec107"/></dir></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

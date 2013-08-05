@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <!-- the same block we have in module's config.xml -->
+    <modules>
+        <!-- This node's name has to be the same as module's full name
+        including namespace -->
+        <MyCustomModule_HelloWorld>
+            <!-- flag indicating weather module is active or not -->
+            <active>true</active>
+            <!-- code pool -->
+            <codePool>local</codePool> <depends>
+                <!-- specifying that out module should be loaded after Mage_Catalog -->
+                <Mage_Catalog />
+            </depends>
+        </MyCustomModule_HelloWorld>
+    </modules>
+</config>

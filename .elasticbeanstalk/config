@@ -1,0 +1,15 @@
+[global]
+ApplicationName=e-commerce
+AwsCredentialFile=C:\Users\karam\.elasticbeanstalk\aws_credential_file
+DevToolsEndpoint=git.elasticbeanstalk.us-east-1.amazonaws.com
+EnvironmentName=e-commerce-env
+EnvironmentType=SingleInstance
+InstanceProfileName=aws-elasticbeanstalk-ec2-role
+OptionSettingFile=C:\Users\karam\Desktop\sharie\magento\.elasticbeanstalk\optionsettings.e-commerce-env
+RdsDeletionPolicy=Delete
+RdsEnabled=No
+RdsSourceSnapshotName=
+Region=us-east-1
+ServiceEndpoint=https://elasticbeanstalk.us-east-1.amazonaws.com
+SolutionStack=64bit Amazon Linux running PHP 5.4
+

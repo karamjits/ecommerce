@@ -1,0 +1,99 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2009 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->getSkinUrl('') ?>css/lof/slider.css" media="all" />
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl('js')?>lof/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl('js')?>lof/jquery.easing.js"></script>
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl('js')?>lof/sliderscript.js"></script>
+<script type="text/javascript">
+var j = jQuery.noConflict();
+j(document).ready(function($) {
+	$obj = $('#lofslidecontent45').lofJSidernews( { interval:2000,
+											easing:'easeOutBounce',
+											duration:1200,
+											auto:false } );						
+});
+</script>
+<?php $_helper = $this->helper('catalog/output'); ?>
+<?php if (($_products = $this->getProductCollection()) && $_products->getSize()): ?>
+<?php //$_columnCount = $this->getColumnCount(); ?>
+<div id="lofslidecontent45" class="lof-slidecontent">
+ <!-- MAIN CONTENT --> 
+	<div class="lof-main-outer">
+        <ul class="lof-main-wapper">
+        	<?php $i=0; foreach ($_products->getItems() as $_product): ?>
+            <li>     		           
+                <div class="content_div">
+                	<div class="left_div">
+                    	
+                    	<p class="product-image product-image-zoom" style="padding:20px 0 0 0;">
+							<?php
+                                $_img = '<img src="'.$this->helper('catalog/image')->init($_product, 'small_image')->resize(180).'" alt="'.$this->htmlEscape($_product->getName()).'" title="'.$this->htmlEscape($_product->getName()).'" />';
+                                echo $_helper->productAttribute($_product, $_img, 'image');
+                            ?>
+                        </p>
+                        
+                    </div>
+                    <div class="right_div">
+                        <span class="banner_heading">
+                        <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>">
+                            <?php echo $this->htmlEscape($_product->getName()) ?>
+                        </a>
+                        </span>
+                        <p class="text_1"><?php echo $_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description') ?></p>
+                        <p class="text_1">
+                        <span id="product-price-7-new" class="regular-pricehome">
+                            <span class="banner_price"><?php echo strip_tags($this->getPriceHtml($_product, true, '-new')); ?></span>                
+                        </span>
+                        <br />
+                        <?php if($_product->isSaleable()): ?>
+                            <br /><button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="button btn-cart" onclick="setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')"><span><span><?php echo $this->__('Add to Cart') ?></span></span></button>
+                        <?php else: ?>
+                            <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
+                        <?php endif; ?>
+                        </p>
+                         
+                    </div>
+                	 
+                </div>
+            </li> 
+            <?php endforeach; ?>
+        </ul>  	
+	</div>
+	<div class="lof-navigator-outer">
+        <ul class="lof-navigator">
+        	<?php $i=0; foreach ($_products->getItems() as $_product): ?>
+            <li>
+                <div>
+                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(140) ?>" width="140" height="70" alt="<?php echo $this->htmlEscape($_product->getName()) ?>" />
+                    <h3><?php echo $this->htmlEscape($_product->getName()) ?></h3>
+                </div>    
+            </li>
+            <?php endforeach; ?>
+    	</ul>
+    </div>
+</div>
+<?php endif; ?>

@@ -1,0 +1,266 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2012 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+<!--div class="header-container"-->
+
+    <!--div class="header"-->
+	<link rel="stylesheet" type="text/css" href="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/slider.css" />
+
+<!--script type="text/javascript" src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/slider.js"></script-->
+	<link href="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/css/amazon_scroller.css" rel="stylesheet" type="text/css"></link>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/amazon_scroller.js"></script><script>
+function abc(x)
+{
+window.location.href=x;	
+}
+</script>
+ <script language="javascript" type="text/javascript">
+
+            $(function() {
+             
+				$("#amazon").amazon_scroller({
+                    scroller_title_show: 'disable',
+                    scroller_time_interval: '3000',
+                    scroller_window_background_color: "none",
+                    scroller_window_padding: '10',
+                    scroller_border_size: '0',
+                    scroller_border_color: '#CCC',
+                    scroller_images_width: '400',
+                    scroller_images_height: '480',
+                    scroller_title_size: '12',
+                    scroller_title_color: 'black',
+                    scroller_show_count: '2',
+                    directory: 'images'
+                })
+				
+            });
+        </script>
+        <?php //if ($this->getIsHomePage()):?>
+        <div align="center">
+      <div class="container">
+           <div class="hedr_sec">
+             <div class="head1">
+              <div class="lft_sec">
+              <div class="logo_sec"><strong></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></div>
+        <div class="nav"  >
+                     <?php echo $this->getlayout()->createBlock('cms/block')->setBlockId('topmenu')->toHtml() ?>
+					 
+                
+                </div></div>
+        <!--div class="quick-access">
+            <?php //echo $this->getChildHtml('topSearch') ?>
+            <!--p class="welcome-msg"><?php //echo $this->getWelcome() ?> <?php //echo $this->getAdditionalHtml() ?></p-->
+            <?php //echo $this->getChildHtml('topLinks') ?>
+            <?php //echo $this->getChildHtml('store_language') ?><?php $routeName = Mage::app()->getRequest()->getRouteName();
+$identifier = Mage::getSingleton('cms/page')->getIdentifier();
+ //echo $identifier;
+ //die;
+ 
+  ?>
+        <!--/div--> <?php if ($this->getIsHomePage()||($routeName == 'cms' && $identifier == 'terms')):?><div class="rgt_sec">
+                 <div class="rgt_lwr">
+                    <div class="back_lnk">
+                       <a href="#"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/images/2.png" alt="image" /></a>
+                    </div>
+                    <div class="lang_div">
+                       <div class="flg">
+                         <a href="#"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/images/3.png" width="16" height="11" alt="image" /></a>
+                       </div>
+                       <div class="selct">
+                          <div class="txt">US</div>
+                          <div class="image2"><a href="#"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/images/4.png" /></a></div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="srch">
+                    <div class="image1">
+                       <a href="#"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/images/1.png" width="15" height="16" alt="image" /></a>
+                    </div>
+                    <div class="txt_bx">
+                       <input type="text" class="box1" />
+                    </div>
+                 </div>
+                 
+              </div><?php else:
+ 
+
+ 
+?>
+			     <div class="rgt_sec1">
+                
+                 
+                 <div class="srch1">
+                    <div class="image1">
+                       <a href="#"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/images/1.png" width="15" height="16" alt="image" /></a>
+                    </div>
+                    <div class="txt_bx">
+                       <input type="text" class="box1" />
+                    </div>
+                 </div>
+                 <div class="hme"><a href="#"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/images/5.png" width="30" height="30" alt="image" /></a></div>
+                 <div class="lwr_sec">
+                    <span class="link" onclick="abc('http://www.google.com')">my order</span>
+                 </div>
+                 
+              </div>
+			  <?php endif;?>
+			  
+			  </div></div>  <?php if ($this->getIsHomePage()){?><div class="div2"><div class="slider">
+    <div class="slidercontent" id="imgslider">
+      <div id="imgsection-1" class="section upper">
+        <img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/1.jpg" width="876" height="605" alt="" />
+      </div>
+      <div id="imgsection-2" class="section upper">
+        <img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/2.jpg" width="876" height="605" alt="" />
+      </div>
+      <div id="imgsection-3" class="section">
+        <img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/3.jpg" width="876" height="605" alt="" />
+      </div>
+	  <div id="imgsection-4" class="section">
+        <img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/4.jpg" width="876" height="605" alt="" />
+      </div>
+    <script>
+function openWin()
+{
+myWindow=window.open('','','width=800,height=800');
+myWindow.document.write("<body style='background-color:#FFF;'> <div class='container'><div class='hedr_sec'>             <div class='head1' style='background-color:#FFF;'>              <div class='lft_sec'>              <div class='logo_sec'>                 <a href='#'><img src='<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/images/logo2.png' width='196'alt='logo' /></a>   </div>              </div>     <div class='rgt_sec1'>    <div class='clse' style='float:right; margin-top:15px; font-size:15px; font-family:Arial, Helvetica, sans-serif; text-align:right;'><a href='JavaScript:window.close()' style='color:#000;'>CLOSE</a></div>         </div>             </div>              </div> <div class='content1' style='float:left; width:983px;margin-top:20px; margin-left:36px;'>   <div class='titl' style='float:left; text-align:left; font-size:27px; font-family:Arial, Helvetica, sans-serif; color:#000; width:100%;'>CONTACT US</div>              <div class='cntct_lst'style='float:left; width:100%; height:auto; margin-top:25px;'><div class='txt5' style=' float:left; font-size:15px; font-family:Arial, Helvetica, sans-serif; color:#000000; text-align:left; width:100%;'> We are available to assist with</div><div class='lst1'style='float:left; width:100%; margin-top:20px; height:auto;'><ul style=' float:left; width:100%; height:auto;'><li style='float:left;color:#000; width:100%; height:auto; font-size:14px; margin-bottom:5px; font-family:Arial, Helvetica, sans-serif; text-align:left;'><a href='#' style='color:#000;text-decoration:none;'>size</a></li><li style='float:left;color:#000; width:100%; height:auto; font-size:14px; margin-bottom:5px; font-family:Arial, Helvetica, sans-serif; text-align:left;'><a href='#'  style='color:#000;text-decoration:none;'>placing orders</a></li><li style='float:left;color:#000; width:100%; height:auto; font-size:14px; margin-bottom:5px; font-family:Arial, Helvetica, sans-serif; text-align:left;'><a href='#'  style='color:#000;text-decoration:none;'>delivery questions</a></li><li style='float:left;color:#000; width:100%; height:auto; font-size:14px; margin-bottom:5px; font-family:Arial, Helvetica, sans-serif; text-align:left;'><a href='#'  style='color:#000;text-decoration:none;'>cleaning</a></li></ul></div></div><div class='cntct_lst'><div class='txt6'> For Customer Support :</div>                  <div class='lst1'><ul><li>Email<a href='#'> customersupport@sharie.com</a></li><li>Call +44 XXXXXX in the United Kingdom or +33 XXXXXX in France</li></ul></div></div><div class='cntct_lst'><div class='txt6' style='float:left; font-size:17px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#000000; text-align:left; width:100%;'> For New Designers :</div><div class='lst1'><ul>                       <li>Email<a href='#'> newdesigners@sharie.com</a></li> <li>Include your <a href='#'>name,phone number,email</a> and link to site if available </li>     </ul>   </div> </div> <div class='cntct_lst'>                  <div class='txt6' style='float:left; font-size:17px; font-weight:bold; font-family:Arial, Helvetica, sans-serif; color:#000000; text-align:left; width:100%;'> To Submit Photos :</div>                  <div class='lst1'>                     <ul>                       <li>Email<a href='#'> submitphotos@sharie.com</a></li>                       <li>Include your <a href='#' style='text-decoration:none;'>name,phone number, event,date,designer of garment and season of garment email</a> (i.e. RTW Spring 2013)</li>           </ul>   </div>    </div>   <div class='cntct_lst'>                  <div class='txt7' style='float:left; font-size:17px; font-family:Arial, Helvetica, sans-serif; color:#000000; text-align:left; width:100%;'>PAYMENT METHODS</div>                  <div class='lst1'>                     <ul style='margin-bottom:20px;'>                       <li>We accept <a href='#'>Visa,MasterCard and PayPal</a></li>                       <li>Your card details will not be retained in our system.</li> </ul></div> </div>          </div>");
+myWindow.focus();
+}
+</script>
+	</div>
+  </div><input type="button" value="CONTACT US" onclick="openWin()" style=" float: right; margin-top: -59px; position: relative;    margin-right: 44px; background: transparent;  border: none;" />
+			   <div class="txt1" > 2013 © Sharie ltd. All Rights Received.</div>
+			  </div> <?php }  $routeName = Mage::app()->getRequest()->getRouteName();
+$identifier = Mage::getSingleton('cms/page')->getIdentifier();
+
+if($routeName == 'cms' && $identifier == 'mag'){ ?><div class=""><div class="div3">    
+<?php 
+
+$catagory_model = Mage::getModel('catalog/category')->load($category_id); //where $category_id is the id of the category
+//echo $catagory_model->name;
+//die;
+//$catagory_model->name=='magslider';
+
+    $collection = Mage::getResourceModel('catalog/product_collection');
+ 
+    $collection->addCategoryFilter($catagory_model); //category filter
+
+    $collection->addAttributeToFilter('status',1); //only enabled product
+ 
+    $collection->addAttributeToSelect(array('name','url','small_image','id')); //add product attribute to be fetched
+ 
+    //$collection->getSelect()->order('rand()'); //uncomment to get products in random order     
+ 
+    $collection->addStoreFilter();          
+// print_r($collection);
+//die;
+ 
+    if(!empty($collection))
+ 
+    { ?>
+  <div id="amazon" class="amazon_scroller">
+                   <div class="amazon_scroller_mask">
+                       <ul> <?php
+            foreach ($collection as $_product):
+ 
+            //echo $_product->getId();   //get product name  
+			//}
+			?>       
+  
+                          <li> <a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200); ?>" width="400" height="500" alt="" />
+       </li>
+	   <?php endforeach;?></ul></div><ul class="amazon_scroller_nav">
+                       <li style="background-image:url(<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/arrow.gif); background-position: right top;height: 49px;right: 0;width: 25px;"></li>
+                       <li style="background-image:url(<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/arrow.gif); background-position: left top;height: 49px;left: 0;width: 25px;"></li>
+                   </ul>
+                   <div style="clear: both"></div></div>
+ <?php
+    }
+	else
+ 
+        {
+ 
+            echo 'No products exists';
+ 
+    }      ?>        
+ <!--a href="<?php echo $_product->getProductUrl() ?>"><img src="<?php echo $this->helper('catalog/image')->init($_product, 'small_image')->resize(200); ?>" width="200" height="200" alt="" /></a> <a href="<?php echo $_product->getProductUrl(); ?>"><?php echo $_product->getName(); ?></a>
+
+<?php 
+     
+ 
+?>
+
+   <div id="amazon" class="amazon_scroller">
+                   <div class="amazon_scroller_mask">
+                       <ul>
+                          <li><a href="link1" title="title1"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/scroller_large_1.jpg" width="960" height="660" alt="title"/></a></li>
+						   
+                           <li><a href="link2" title="title2"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/scroller_large_2.jpg" width="960" height="660" alt="title"/></a></li>
+						   
+                           <li><a href="link3" title="title3"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/scroller_large_3.jpg" width="960" height="660" alt="title"/></a></li>
+						   
+                           <li><a href="link4" title="title4"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/scroller_large_4.jpg" width="960" height="660" alt="title"/></a></li>
+						   
+                           <li><a href="link1" title="title5"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/scroller_large_1.jpg" width="960" height="660" alt="title"/></a></li>
+						   
+                           <li><a href="link2" title="title6"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/scroller_large_2.jpg" width="960" height="660" alt="title"/></a></li>
+						   
+                           <li><a href="link3" title="title7"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/scroller_large_3.jpg" width="960" height="660" alt="title"/></a></li>
+						   
+                           <li><a href="link4" title="title8"><img src="<?php echo Mage::getBaseUrl('skin');?>frontend/default/default/js/images/scroller_large_4.jpg" width="960" height="660" alt="title"/></a></li>
+						   
+                       </ul>
+                   </div>
+                   <ul class="amazon_scroller_nav">
+                       <li></li>
+                       <li></li>
+                   </ul>
+                   <div style="clear: both"></div>
+    </div></div></div><?php } 
+	
+	$routeName = Mage::app()->getRequest()->getRouteName();
+$identifier = Mage::getSingleton('cms/page')->getIdentifier();
+ //echo $identifier;
+ //die;
+ 
+ if($routeName == 'cms' && $identifier == 'terms') {terms
+	?><?php echo $this->getlayout()->createBlock('cms/block')->setBlockId('terms')->toHtml() ?> <?php } $routeName = Mage::app()->getRequest()->getRouteName();
+$identifier = Mage::getSingleton('cms/page')->getIdentifier();
+ //echo $identifier;
+ //die;
+ 
+ if($routeName == 'cms' && $identifier == 'contact') { ?>    
+           <?php } ?>
+
+
+        <?php echo $this->getChildHtml('topContainer'); ?>
+    
+<?php echo $this->getChildHtml('topMenu') ?>
+<?php //endif;?>
